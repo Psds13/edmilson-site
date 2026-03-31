@@ -128,7 +128,7 @@ export default function Hero() {
                  src="/eusinho.png" 
                  alt="Edmilson Oliveira"
                  fill
-                 className="object-cover scale-110 group-hover:scale-100 transition-transform duration-1000 grayscale-[0.3] group-hover:grayscale-0"
+                 className="object-cover object-top lg:object-center scale-110 group-hover:scale-100 transition-transform duration-1000 grayscale-[0.3] group-hover:grayscale-0"
                  priority
                />
                {/* Overlay Gradient */}
