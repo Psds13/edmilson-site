@@ -111,19 +111,20 @@ export default function Hero() {
 
         <motion.div 
           initial={{ opacity: 0, scale: 0.9, rotateY: 20 }}
-          animate={{ opacity: 1, scale: 1, rotateY: 0 }}
+          whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
+          viewport={{ once: true }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           style={{ y: y1, opacity }}
-          className="relative hidden lg:flex justify-end items-center h-full perspective-1000"
+          className="relative flex justify-center lg:justify-end items-center h-full perspective-1000 mt-12 lg:mt-0"
         >
           <div className="relative group">
             {/* Animated Rings */}
-            <div className="absolute inset-[-20px] rounded-full border border-purple-500/10 animate-[spin_20s_linear_infinite]" />
-            <div className="absolute inset-[-40px] rounded-full border border-blue-500/5 animate-[spin_30s_linear_infinite_reverse]" />
+            <div className="absolute inset-[-15px] sm:inset-[-20px] rounded-full border border-purple-500/10 animate-[spin_20s_linear_infinite]" />
+            <div className="absolute inset-[-30px] sm:inset-[-40px] rounded-full border border-blue-500/5 animate-[spin_30s_linear_infinite_reverse]" />
             
             <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/30 to-blue-600/30 rounded-3xl blur-3xl group-hover:scale-110 transition-transform duration-700"></div>
             
-            <div className="relative w-[450px] h-[550px] rounded-[40px] glass border-white/10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] transform-gpu transition-all duration-700 group-hover:rotate-2 group-hover:scale-[1.02]">
+            <div className="relative w-[280px] h-[350px] sm:w-[380px] sm:h-[480px] lg:w-[450px] lg:h-[550px] rounded-[30px] sm:rounded-[40px] glass border-white/10 overflow-hidden shadow-[0_0_50px_rgba(0,0,0,0.5)] transform-gpu transition-all duration-700 group-hover:rotate-2 group-hover:scale-[1.02]">
                <Image 
                  src="/eusinho.png" 
                  alt="Edmilson Oliveira"
