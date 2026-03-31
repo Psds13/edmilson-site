@@ -8,7 +8,6 @@ import Link from "next/link";
 export default function Hero() {
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
     <section id="home" className="min-h-screen flex items-center pt-20 overflow-hidden relative bg-[#030008]">
@@ -114,7 +113,7 @@ export default function Hero() {
           whileInView={{ opacity: 1, scale: 1, rotateY: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-          style={{ y: y1, opacity }}
+          style={{ y: y1 }}
           className="relative flex justify-center lg:justify-end items-center h-full perspective-1000 mt-12 lg:mt-0"
         >
           <div className="relative group">
