@@ -10,17 +10,17 @@ export default function Hero() {
   const y1 = useTransform(scrollY, [0, 500], [0, 200]);
 
   return (
-    <section id="home" className="min-h-screen flex items-center pt-20 overflow-hidden relative bg-[#030008]">
+    <section id="home" className="min-h-screen flex items-start lg:items-center pt-28 lg:pt-20 overflow-hidden relative bg-[#030008]">
       {/* Dynamic Background Elements */}
       <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse" />
       <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-600/10 rounded-full blur-[120px] pointer-events-none animate-pulse" style={{ animationDelay: '2s' }} />
       
-      <div className="container mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      <div className="container mx-auto px-6 lg:px-12 grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-center relative z-10">
         <motion.div 
           initial={{ opacity: 0, x: -30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-          className="space-y-10 lg:pl-4"
+          className="space-y-8 lg:space-y-10 lg:pl-4"
         >
           <div className="space-y-6">
             <motion.div
@@ -38,7 +38,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3, duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-                className="text-6xl md:text-8xl font-bold text-white tracking-tight leading-[1.1]"
+                className="text-5xl md:text-8xl font-bold text-white tracking-tight leading-[1.1]"
               >
                 Edmilson <br />
                 <span className="text-gradient">Oliveira</span>
@@ -47,7 +47,7 @@ export default function Hero() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-                className="text-3xl md:text-4xl text-gray-300 font-light tracking-wide italic"
+                className="text-2xl md:text-4xl text-gray-300 font-light tracking-wide italic"
               >
                 Full Stack <span className="text-white/20">|</span> Software Engineer
               </motion.h3>
@@ -58,7 +58,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-            className="text-gray-300 text-lg md:text-xl max-w-xl leading-relaxed font-light"
+            className="text-gray-300 text-base md:text-xl max-w-xl leading-relaxed font-light"
           >
             Arquiteto soluções digitais de alto impacto, unindo performance técnica à experiências visuais memoráveis e escaláveis.
           </motion.p>
@@ -67,16 +67,16 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.8, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
-            className="flex flex-wrap gap-5 pt-4"
+            className="flex flex-wrap gap-4 pt-2"
           >
             <Link href="#projetos" className="btn-premium group shadow-[0_0_20px_rgba(168,85,247,0.15)] hover:shadow-[0_0_30px_rgba(168,85,247,0.3)]">
-              <span className="relative z-10 font-semibold tracking-wide">Explorar Projetos</span>
-              <ArrowRight size={20} className="relative z-10 group-hover:translate-x-1 transition-transform" />
+              <span className="relative z-10 font-semibold tracking-wide text-sm">Explorar Projetos</span>
+              <ArrowRight size={18} className="relative z-10 group-hover:translate-x-1 transition-transform" />
             </Link>
             
-            <Link href="/Edmilson_Oliveira.pdf" target="_blank" className="relative group px-8 py-3 rounded-full flex items-center gap-2 text-gray-300 font-medium border border-white/5 hover:border-white/20 transition-all bg-white/2 overflow-hidden">
+            <Link href="/Edmilson_Oliveira.pdf" target="_blank" className="relative group px-6 py-3 rounded-full flex items-center gap-2 text-gray-300 text-sm font-medium border border-white/5 hover:border-white/20 transition-all bg-white/2 overflow-hidden">
               <div className="absolute inset-0 bg-white/5 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
-              <Download size={20} className="relative z-10" /> 
+              <Download size={18} className="relative z-10" /> 
               <span className="relative z-10">Download CV</span>
             </Link>
           </motion.div>
@@ -114,7 +114,7 @@ export default function Hero() {
           viewport={{ once: true }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] as [number, number, number, number] }}
           style={{ y: y1 }}
-          className="relative flex justify-center lg:justify-end items-center h-full perspective-1000 mt-12 lg:mt-0"
+          className="relative flex justify-center lg:justify-end items-center h-full perspective-1000 mt-6 lg:mt-0"
         >
           <div className="relative group">
             {/* Animated Rings */}
@@ -128,7 +128,7 @@ export default function Hero() {
                  src="/eusinho.png" 
                  alt="Edmilson Oliveira"
                  fill
-                 className="object-cover object-top lg:object-center scale-110 group-hover:scale-100 transition-transform duration-1000 grayscale-[0.3] group-hover:grayscale-0"
+                 className="object-cover object-[center_10%] lg:object-center scale-110 group-hover:scale-100 transition-transform duration-1000 grayscale-[0.3] group-hover:grayscale-0"
                  priority
                />
                {/* Overlay Gradient */}
