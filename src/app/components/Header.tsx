@@ -1,56 +1,50 @@
+"use client";
+
+import Link from "next/link";
+import { useState, useEffect } from "react";
+import Image from "next/image";
+
 const Header = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 glass rounded-none border-x-0 border-t-0 bg-space-black/50">
-      <div className="container mx-auto flex justify-between items-center p-4">
-        <div className="flex items-center gap-3">
-          <img
-            src="landing-page.jpg"
-            alt="Logo"
-            className="w-10 h-10 rounded-full border border-purple-500/50"
-          />
-          <span className="font-bold text-xl tracking-tight hidden sm:inline-block">
+    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'glass rounded-none border-x-0 border-t-0 bg-space-black/80 py-2' : 'bg-transparent py-4'}`}>
+      <div className="container mx-auto flex justify-between items-center px-6">
+        <Link href="#home" className="flex items-center gap-3">
+          <div className="relative w-10 h-10 rounded-full border border-purple-500/50 overflow-hidden">
+             <Image src="/landing-page.jpg" alt="Logo" fill className="object-cover" />
+          </div>
+          <span className="font-bold text-xl tracking-tight hidden sm:inline-block text-white">
             Edmilson<span className="text-purple-500">.dev</span>
           </span>
-        </div>
+        </Link>
 
-        <nav>
-          <ul className="flex space-x-6 md:space-x-8">
-            <li>
-              <a href="#hero" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
-                Início
-              </a>
-            </li>
-            <li>
-              <a href="#sobre" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
-                Sobre
-              </a>
-            </li>
-            <li>
-              <a href="#skills" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
-                Habilidades
-              </a>
-            </li>
-            <li>
-              <a href="#projects" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
-                Projetos
-              </a>
-            </li>
-            <li>
-              <a href="#metodologia" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">
-                Metodologia
-              </a>
-            </li>
-            <li>
-              <a href="#contact" className="text-sm font-medium text-purple-400 hover:text-purple-300 transition-colors">
-                Contato
-              </a>
-            </li>
+        <nav className="hidden md:block">
+          <ul className="flex space-x-8">
+            <li><Link href="#home" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Início</Link></li>
+            <li><Link href="#sobre" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Sobre</Link></li>
+            <li><Link href="#habilidades" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Tecnologias</Link></li>
+            <li><Link href="#projetos" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Projetos</Link></li>
+            <li><Link href="#formacao" className="text-sm font-medium text-gray-300 hover:text-white transition-colors">Formação</Link></li>
           </ul>
         </nav>
+
+        <Link href="#contatos" className="hidden md:flex text-sm font-medium text-white bg-purple-600/20 border border-purple-500/50 hover:bg-purple-600/40 px-5 py-2 rounded-full transition-all duration-300 hover:shadow-[0_0_15px_rgba(168,85,247,0.4)]">
+          Contato
+        </Link>
+        
+        {/* Mobile menu button could be added here */}
       </div>
     </header>
   );
 };
 
 export default Header;
-

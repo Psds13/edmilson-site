@@ -5,9 +5,6 @@ const Footer = () => {
         <p className="text-gray-400 text-sm">
           © {new Date().getFullYear()} <span className="text-white font-semibold">Edmilson Oliveira</span>. Todos os direitos reservados.
         </p>
-        <p className="text-xs text-gray-500 mt-2">
-          Construído com Next.js, Tailwind CSS e foco em engenharia de software eficiente.
-        </p>
         <div className="mt-6">
           <a href="#hero" className="text-purple-400 hover:text-purple-300 transition-colors text-sm font-medium">
             Voltar ao topo ↑
